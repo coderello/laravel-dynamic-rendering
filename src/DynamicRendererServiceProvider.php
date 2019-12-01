@@ -23,6 +23,13 @@ class DynamicRendererServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->mergeConfigFrom(
+            __DIR__.'/../config/dynamic-renderer.php',
+            'dynamic-renderer'
+        );
+
+        $this->app->singleton('dynamic.renderer', function ($app) {
+            return new DynamicRendererManager($app);
+        });
     }
 }

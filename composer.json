@@ -4,7 +4,8 @@
     "type": "library",
     "license": "MIT",
     "require": {
-        "illuminate/support": "^6.0"
+        "illuminate/support": "^6.0",
+        "guzzlehttp/guzzle": "^6.4"
     },
     "require-dev": {
         "orchestra/testbench": "^4.3"

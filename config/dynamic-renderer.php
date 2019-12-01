@@ -2,14 +2,16 @@
 
 return [
 
-    'enabled' => env('DYNAMIC_RENDERING_ENABLED', true),
+    'enabled' => env('DYNAMIC_RENDERER_ENABLED', true),
 
-    'driver' => 'prerender_local',
+    'driver' => env('DYNAMIC_RENDERER_DRIVER', 'prerender_local'),
 
-    'drivers' => [
-        'prerender_local' => [],
+    'prerender_local' => [
+        'service_url' => env('PRERENDER_LOCAL_SERVICE_URL', 'http://localhost:3000'),
+    ],
 
-        'prerender_io' => [],
+    'prerender_io' => [
+        // todo: token?
     ],
 
 ];
