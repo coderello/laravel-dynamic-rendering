@@ -1,5 +1,5 @@
 ---
-title: Installation
+title: Introduction
 section: Getting Started
 weight: 200
 featherIcon: info
