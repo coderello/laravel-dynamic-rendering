@@ -2,7 +2,7 @@
 
 namespace Coderello\DynamicRenderer\Renderers;
 
-use Coderello\DynamicRenderer\RenderedPage;
+use Coderello\DynamicRenderer\Support\RenderingResult;
 use GuzzleHttp\Client;
 use GuzzleHttp\RequestOptions;
 use Illuminate\Support\Str;
@@ -19,7 +19,7 @@ class PrerenderLocalRenderer implements Renderer
         $this->serviceUrl = $options['service_url'] ?? null;
     }
 
-    public function render(string $url): RenderedPage
+    public function render(string $url): RenderingResult
     {
         $client = new Client;
 
@@ -27,7 +27,7 @@ class PrerenderLocalRenderer implements Renderer
             RequestOptions::HTTP_ERRORS => false,
         ]);
 
-        return (new RenderedPage)
+        return (new RenderingResult)
             ->setContent($response->getBody()->getContents())
             ->setStatusCode($response->getStatusCode());
     }

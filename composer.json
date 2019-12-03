@@ -4,8 +4,9 @@
     "type": "library",
     "license": "MIT",
     "require": {
-        "illuminate/support": "^6.0",
-        "guzzlehttp/guzzle": "^6.4"
+        "laravel/framework": "5.5.*|5.6.*|5.7.*|5.8.*|^6.0",
+        "guzzlehttp/guzzle": "^6.4",
+        "jaybizzle/crawler-detect": "^1.2"
     },
     "require-dev": {
         "orchestra/testbench": "^4.3"
@@ -26,7 +27,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Coderello\\DynamicRenderer\\DynamicRendererServiceProvider"
+                "Coderello\\DynamicRenderer\\Providers\\DynamicRendererServiceProvider"
             ]
         }
     }

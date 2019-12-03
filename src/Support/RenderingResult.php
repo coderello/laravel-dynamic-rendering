@@ -1,8 +1,8 @@
 <?php
 
-namespace Coderello\DynamicRenderer;
+namespace Coderello\DynamicRenderer\Support;
 
-class RenderedPage
+class RenderingResult
 {
     /**
      * @var string
@@ -24,7 +24,7 @@ class RenderedPage
 
     /**
      * @param string $content
-     * @return RenderedPage
+     * @return RenderingResult
      */
     public function setContent(string $content): self
     {
@@ -43,7 +43,7 @@ class RenderedPage
 
     /**
      * @param int $statusCode
-     * @return RenderedPage
+     * @return RenderingResult
      */
     public function setStatusCode(int $statusCode): self
     {

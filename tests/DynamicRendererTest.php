@@ -2,30 +2,36 @@
 
 namespace Coderello\DynamicRenderer\Tests;
 
-use Coderello\DynamicRenderer\DynamicRenderer;
-use Coderello\DynamicRenderer\DynamicRendererManager;
+use Coderello\DynamicRenderer\Facades\DynamicRenderer;
 use Coderello\DynamicRenderer\Renderers\PrerenderLocalRenderer;
 use Coderello\DynamicRenderer\Renderers\Renderer;
+use Symfony\Component\Process\Process;
 
 class DynamicRendererTest extends AbstractTestCase
 {
-    /** @var Renderer */
-    protected $dynamicRenderer;
-
-    protected function setUp(): void
+    public function testTemporary()
     {
-        parent::setUp();
+        $url = $this->getWebUrl('example-1.html');
 
-        $this->dynamicRenderer = app(DynamicRendererManager::class);
-    }
+        $renderingResult = DynamicRenderer::render($url);
 
-    public function testTrue()
-    {
-        $renderedPage = $this->dynamicRenderer
-            ->render('https://coderello.test/404');
+        $renderingResultContent = $renderingResult->getContent();
 
-        DynamicRenderer::render('https://coderello.test/404');
+        $renderingResultStatusCode = $renderingResult->getStatusCode();
 
-        $this->assertTrue(true);
+        $this->assertSame(
+            200,
+            $renderingResultStatusCode
+        );
+
+        $this->assertStringContainsString(
+            '<title>Updated title</title>',
+            $renderingResultContent
+        );
+
+        $this->assertStringContainsString(
+            '<h1>Updated heading</h1>',
+            $renderingResultContent
+        );
     }
 }

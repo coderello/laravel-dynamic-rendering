@@ -4,6 +4,12 @@ return [
 
     'enabled' => env('DYNAMIC_RENDERER_ENABLED', true),
 
+    'rendering_criteria' => [
+        // \Coderello\DynamicRenderer\RenderingCriteria\IsProduction::class,
+        \Coderello\DynamicRenderer\RenderingCriteria\IsNotRenderer::class,
+        \Coderello\DynamicRenderer\RenderingCriteria\IsCrawler::class,
+    ],
+
     'driver' => env('DYNAMIC_RENDERER_DRIVER', 'prerender_local'),
 
     'prerender_local' => [

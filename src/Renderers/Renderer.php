@@ -2,9 +2,9 @@
 
 namespace Coderello\DynamicRenderer\Renderers;
 
-use Coderello\DynamicRenderer\RenderedPage;
+use Coderello\DynamicRenderer\Support\RenderingResult;
 
 interface Renderer
 {
-    public function render(string $url): RenderedPage;
+    public function render(string $url): RenderingResult;
 }

@@ -1,9 +1,11 @@
 <?php
 
-namespace Coderello\DynamicRenderer;
+namespace Coderello\DynamicRenderer\Managers;
 
 use Coderello\DynamicRenderer\Renderers\PrerenderLocalRenderer;
 use Coderello\DynamicRenderer\Renderers\Renderer;
+use Coderello\DynamicRenderer\Support\RenderingResult;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Manager;
 
 class DynamicRendererManager extends Manager implements Renderer
@@ -15,17 +17,23 @@ class DynamicRendererManager extends Manager implements Renderer
      */
     public function getDefaultDriver()
     {
-        return $this->config->get('dynamic-renderer.driver', 'prerender_local');
+        return $this->getConfigValue('dynamic-renderer.driver', 'prerender_local');
+    }
+
+    private function getConfigValue(string $key, $default = null)
+    {
+        // todo
+        return Config::get($key, $default);
     }
 
     public function createPrerenderLocalDriver()
     {
         return new PrerenderLocalRenderer(
-            $this->config->get('dynamic-renderer.prerender_local', [])
+            $this->getConfigValue('dynamic-renderer.prerender_local', [])
         );
     }
 
-    public function render(string $url): RenderedPage
+    public function render(string $url): RenderingResult
     {
         /** @var Renderer $driver */
         $driver = $this->driver();
