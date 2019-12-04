@@ -5,6 +5,7 @@ namespace Coderello\DynamicRenderer\Renderers;
 use Coderello\DynamicRenderer\Support\RenderingResult;
 use GuzzleHttp\Client;
 use GuzzleHttp\RequestOptions;
+use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
 class PrerenderRenderer implements Renderer
@@ -30,5 +31,10 @@ class PrerenderRenderer implements Renderer
         return (new RenderingResult)
             ->setContent($response->getBody()->getContents())
             ->setStatusCode($response->getStatusCode());
+    }
+
+    public function isRendering(Request $request): bool
+    {
+        return Str::is('*Prerender*', $request->userAgent());
     }
 }

@@ -6,7 +6,9 @@ return [
 
     'rendering_criteria' => [
         // \Coderello\DynamicRenderer\RenderingCriteria\IsProduction::class,
+        \Coderello\DynamicRenderer\RenderingCriteria\IsNotRenderer::class,
         \Coderello\DynamicRenderer\RenderingCriteria\IsCrawler::class,
+        \Coderello\DynamicRenderer\RenderingCriteria\IsNotStaticFilePath::class,
     ],
 
     'driver' => env('DYNAMIC_RENDERER_DRIVER', 'prerender'),

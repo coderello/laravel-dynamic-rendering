@@ -6,6 +6,7 @@ use Coderello\DynamicRenderer\Renderers\PrerenderRenderer;
 use Coderello\DynamicRenderer\Renderers\Renderer;
 use Coderello\DynamicRenderer\Renderers\RendertronRenderer;
 use Coderello\DynamicRenderer\Support\RenderingResult;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Manager;
 
@@ -55,5 +56,13 @@ class DynamicRendererManager extends Manager implements Renderer
         $driver = $this->driver();
 
         return $driver->getUserAgentPatterns();
+    }
+
+    public function isRendering(Request $request): bool
+    {
+        /** @var Renderer $driver */
+        $driver = $this->driver();
+
+        return $driver->isRendering($request);
     }
 }
