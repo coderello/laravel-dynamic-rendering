@@ -2,9 +2,9 @@
 
 namespace Coderello\DynamicRendering\Providers;
 
-use Coderello\DynamicRendering\Managers\DynamicRendererManager;
+use Coderello\DynamicRendering\Managers\RendererManager;
 use Coderello\DynamicRendering\Middleware\DynamicRenderingMiddleware;
-use Coderello\DynamicRendering\Renderers\DynamicRenderer;
+use Coderello\DynamicRendering\Renderers\Renderer;
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Support\ServiceProvider;
 
@@ -52,7 +52,7 @@ class DynamicRenderingServiceProvider extends ServiceProvider
     protected function registerBindings()
     {
         $this->app->singleton('dynamic.renderer', function ($app) {
-            return new DynamicRendererManager($app);
+            return new RendererManager($app);
         });
     }
 

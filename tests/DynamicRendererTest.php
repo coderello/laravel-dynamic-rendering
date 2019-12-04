@@ -3,7 +3,7 @@
 namespace Coderello\DynamicRendering\Tests;
 
 use Coderello\DynamicRendering\Facades\DynamicRenderer;
-use Coderello\DynamicRendering\Renderers\PrerenderDynamicRenderer;
+use Coderello\DynamicRendering\Renderers\PrerenderRenderer;
 use Symfony\Component\Process\Process;
 
 class DynamicRenderingTest extends AbstractTestCase

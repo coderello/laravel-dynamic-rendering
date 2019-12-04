@@ -4,7 +4,6 @@ namespace Coderello\DynamicRendering\Middleware;
 
 use Closure;
 use Coderello\DynamicRendering\Facades\DynamicRenderer;
-use Coderello\DynamicRendering\Renderers\DynamicRenderer;
 use Coderello\DynamicRendering\Support\RenderingCriteriaChecker;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Http\Request;

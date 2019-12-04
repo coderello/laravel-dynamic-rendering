@@ -2,7 +2,7 @@
 
 namespace Coderello\DynamicRendering\RenderingCriteria;
 
-use Coderello\DynamicRendering\Facades\DynamicRendering;
+use Coderello\DynamicRendering\Facades\DynamicRenderer;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -12,6 +12,6 @@ class IsNotRenderer implements RenderingCriterion
 {
     public function matches(Request $request): bool
     {
-        return ! DynamicRendering::isRendering($request);
+        return ! DynamicRenderer::isRendering($request);
     }
 }

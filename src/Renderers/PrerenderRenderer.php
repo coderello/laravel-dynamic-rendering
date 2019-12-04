@@ -8,23 +8,23 @@ use GuzzleHttp\RequestOptions;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
-class RendertronDynamicRenderer implements DynamicRenderer
+class PrerenderRenderer implements Renderer
 {
     /**
      * @var string|null
      */
-    protected $rendertronUrl;
+    protected $prerenderUrl;
 
     public function __construct(array $options = [])
     {
-        $this->rendertronUrl = $options['url'] ?? null;
+        $this->prerenderUrl = $options['url'] ?? null;
     }
 
     public function render(string $url): RenderingResult
     {
         $client = new Client;
 
-        $response = $client->get(Str::finish($this->rendertronUrl, '/render/').$url, [
+        $response = $client->get(Str::finish($this->prerenderUrl, '/').$url, [
             RequestOptions::HTTP_ERRORS => false,
         ]);
 
@@ -35,6 +35,6 @@ class RendertronDynamicRenderer implements DynamicRenderer
 
     public function isRendering(Request $request): bool
     {
-        return Str::contains($request->userAgent(), 'HeadlessChrome');
+        return Str::contains($request->userAgent(), 'Prerender');
     }
 }
