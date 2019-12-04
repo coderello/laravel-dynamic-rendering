@@ -27,4 +27,3 @@ All you have to do on the application side is to put these variables into the `.
 DYNAMIC_RENDERER_DRIVER=prerender
 PRERENDER_URL=http://localhost:3000
 ```
-

@@ -9,4 +9,4 @@ featherIcon: info
 
 Under the hood, if the request was made by the search bot, the requested page of your SPA is being converted into the plain HTML using the renderer and returned to the robot.
 
-The search engine is happy, you are happy, all are happy!
+The search engine is happy, you are happy, everyone is happy!
