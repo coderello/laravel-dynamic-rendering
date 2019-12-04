@@ -1,16 +1,16 @@
 <?php
 
-namespace Coderello\DynamicRenderer\Middleware;
+namespace Coderello\DynamicRendering\Middleware;
 
 use Closure;
-use Coderello\DynamicRenderer\Facades\DynamicRenderer;
-use Coderello\DynamicRenderer\Renderers\Renderer;
-use Coderello\DynamicRenderer\Support\RenderingCriteriaChecker;
+use Coderello\DynamicRendering\Facades\DynamicRenderer;
+use Coderello\DynamicRendering\Renderers\DynamicRenderer;
+use Coderello\DynamicRendering\Support\RenderingCriteriaChecker;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-class DynamicRendererMiddleware
+class DynamicRenderingMiddleware
 {
     public function handle(Request $request, Closure $next)
     {

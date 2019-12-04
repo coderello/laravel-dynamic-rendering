@@ -10,7 +10,7 @@
          processIsolation="false"
          stopOnFailure="false">
     <testsuites>
-        <testsuite name="Dynamic Renderer Test Suite">
+        <testsuite name="Dynamic Rendering Test Suite">
             <directory>tests</directory>
         </testsuite>
     </testsuites>

@@ -1,6 +1,6 @@
 <?php
 
-namespace Coderello\DynamicRenderer\RenderingCriteria;
+namespace Coderello\DynamicRendering\RenderingCriteria;
 
 use Illuminate\Contracts\Config\Repository as Config;
 use Illuminate\Contracts\Foundation\Application;
@@ -20,6 +20,6 @@ class IsEnabled implements RenderingCriterion
 
     public function matches(Request $request): bool
     {
-        return (bool) $this->config->get('dynamic-renderer.enabled', true);
+        return (bool) $this->config->get('dynamic-rendering.enabled', true);
     }
 }

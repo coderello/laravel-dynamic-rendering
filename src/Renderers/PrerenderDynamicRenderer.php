@@ -1,14 +1,14 @@
 <?php
 
-namespace Coderello\DynamicRenderer\Renderers;
+namespace Coderello\DynamicRendering\Renderers;
 
-use Coderello\DynamicRenderer\Support\RenderingResult;
+use Coderello\DynamicRendering\Support\RenderingResult;
 use GuzzleHttp\Client;
 use GuzzleHttp\RequestOptions;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
-class PrerenderRenderer implements Renderer
+class PrerenderDynamicRenderer implements DynamicRenderer
 {
     /**
      * @var string|null
@@ -35,6 +35,6 @@ class PrerenderRenderer implements Renderer
 
     public function isRendering(Request $request): bool
     {
-        return Str::is('*Prerender*', $request->userAgent());
+        return Str::contains($request->userAgent(), 'Prerender');
     }
 }

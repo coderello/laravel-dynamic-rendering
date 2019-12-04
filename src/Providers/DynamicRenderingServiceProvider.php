@@ -1,14 +1,14 @@
 <?php
 
-namespace Coderello\DynamicRenderer\Providers;
+namespace Coderello\DynamicRendering\Providers;
 
-use Coderello\DynamicRenderer\Managers\DynamicRendererManager;
-use Coderello\DynamicRenderer\Middleware\DynamicRendererMiddleware;
-use Coderello\DynamicRenderer\Renderers\Renderer;
+use Coderello\DynamicRendering\Managers\DynamicRendererManager;
+use Coderello\DynamicRendering\Middleware\DynamicRenderingMiddleware;
+use Coderello\DynamicRendering\Renderers\DynamicRenderer;
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Support\ServiceProvider;
 
-class DynamicRendererServiceProvider extends ServiceProvider
+class DynamicRenderingServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap shared data service.
@@ -37,15 +37,15 @@ class DynamicRendererServiceProvider extends ServiceProvider
     protected function registerPublishing()
     {
         $this->publishes([
-            __DIR__ . '/../../config/dynamic-renderer.php' => config_path('dynamic-renderer.php'),
-        ], 'dynamic-renderer-config');
+            __DIR__ . '/../../config/dynamic-rendering.php' => config_path('dynamic-rendering.php'),
+        ], 'dynamic-rendering-config');
     }
 
     protected function registerConfig()
     {
         $this->mergeConfigFrom(
-            __DIR__ . '/../../config/dynamic-renderer.php',
-            'dynamic-renderer'
+            __DIR__ . '/../../config/dynamic-rendering.php',
+            'dynamic-rendering'
         );
     }
 
@@ -61,6 +61,6 @@ class DynamicRendererServiceProvider extends ServiceProvider
         /** @var Kernel $kernel */
         $kernel = $this->app[Kernel::class];
 
-        $kernel->pushMiddleware(DynamicRendererMiddleware::class);
+        $kernel->pushMiddleware(DynamicRenderingMiddleware::class);
     }
 }

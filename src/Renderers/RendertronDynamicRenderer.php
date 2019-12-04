@@ -1,14 +1,14 @@
 <?php
 
-namespace Coderello\DynamicRenderer\Renderers;
+namespace Coderello\DynamicRendering\Renderers;
 
-use Coderello\DynamicRenderer\Support\RenderingResult;
+use Coderello\DynamicRendering\Support\RenderingResult;
 use GuzzleHttp\Client;
 use GuzzleHttp\RequestOptions;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
-class RendertronRenderer implements Renderer
+class RendertronDynamicRenderer implements DynamicRenderer
 {
     /**
      * @var string|null

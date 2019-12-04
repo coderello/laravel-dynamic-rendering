@@ -1,6 +1,6 @@
 {
-    "name": "coderello/laravel-dynamic-renderer",
-    "description": "Dynamic renderer for your Laravel application.",
+    "name": "coderello/laravel-dynamic-rendering",
+    "description": "Dynamic rendering for your Laravel application.",
     "type": "library",
     "license": "MIT",
     "require": {
@@ -14,12 +14,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Coderello\\DynamicRenderer\\": "src/"
+            "Coderello\\DynamicRendering\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Coderello\\DynamicRenderer\\Tests\\": "tests/"
+            "Coderello\\DynamicRendering\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -28,7 +28,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Coderello\\DynamicRenderer\\Providers\\DynamicRendererServiceProvider"
+                "Coderello\\DynamicRendering\\Providers\\DynamicRenderingServiceProvider"
             ]
         }
     }

@@ -1,8 +1,8 @@
 <?php
 
-namespace Coderello\DynamicRenderer\Support;
+namespace Coderello\DynamicRendering\Support;
 
-use Coderello\DynamicRenderer\RenderingCriteria\RenderingCriterion;
+use Coderello\DynamicRendering\RenderingCriteria\RenderingCriterion;
 use Illuminate\Contracts\Config\Repository as Config;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Http\Request;
@@ -28,7 +28,7 @@ class RenderingCriteriaChecker
 
     public function matchesAll(Request $request): bool
     {
-        $criteria = $this->config->get('dynamic-renderer.rendering_criteria', []);
+        $criteria = $this->config->get('dynamic-rendering.rendering_criteria', []);
 
         foreach ($criteria as $criterionClass) {
             $criterion = $this->container->make($criterionClass);

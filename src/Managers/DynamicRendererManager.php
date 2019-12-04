@@ -1,25 +1,20 @@
 <?php
 
-namespace Coderello\DynamicRenderer\Managers;
+namespace Coderello\DynamicRendering\Managers;
 
-use Coderello\DynamicRenderer\Renderers\PrerenderRenderer;
-use Coderello\DynamicRenderer\Renderers\Renderer;
-use Coderello\DynamicRenderer\Renderers\RendertronRenderer;
-use Coderello\DynamicRenderer\Support\RenderingResult;
+use Coderello\DynamicRendering\Renderers\PrerenderDynamicRenderer;
+use Coderello\DynamicRendering\Renderers\DynamicRenderer;
+use Coderello\DynamicRendering\Renderers\RendertronDynamicRenderer;
+use Coderello\DynamicRendering\Support\RenderingResult;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Manager;
 
-class DynamicRendererManager extends Manager implements Renderer
+class DynamicRendererManager extends Manager implements DynamicRenderer
 {
-    /**
-     * Get the default driver name.
-     *
-     * @return string
-     */
     public function getDefaultDriver(): string
     {
-        return $this->getConfigValue('dynamic-renderer.driver');
+        return $this->getConfigValue('dynamic-rendering.default');
     }
 
     private function getConfigValue(string $key, $default = null)
@@ -28,41 +23,37 @@ class DynamicRendererManager extends Manager implements Renderer
         return Config::get($key, $default);
     }
 
-    public function createPrerenderDriver(): PrerenderRenderer
+    private function getRendererConfig(string $renderer): array
     {
-        return new PrerenderRenderer(
-            $this->getConfigValue('dynamic-renderer.prerender', [])
+        return $this->getConfigValue('dynamic-rendering.renderers.'.$renderer, []);
+    }
+
+    public function createPrerenderDriver(): PrerenderDynamicRenderer
+    {
+        return new PrerenderDynamicRenderer(
+            $this->getRendererConfig('prerender')
         );
     }
 
-    public function createRendertronDriver(): RendertronRenderer
+    public function createRendertronDriver(): RendertronDynamicRenderer
     {
-        return new RendertronRenderer(
-            $this->getConfigValue('dynamic-renderer.rendertron', [])
+        return new RendertronDynamicRenderer(
+            $this->getRendererConfig('rendertron')
         );
     }
 
     public function render(string $url): RenderingResult
     {
-        /** @var Renderer $driver */
-        $driver = $this->driver();
-
-        return $driver->render($url);
-    }
-
-    public function getUserAgentPatterns(): array
-    {
-        /** @var Renderer $driver */
-        $driver = $this->driver();
-
-        return $driver->getUserAgentPatterns();
+        return $this->driver()->render($url);
     }
 
     public function isRendering(Request $request): bool
     {
-        /** @var Renderer $driver */
-        $driver = $this->driver();
+        return $this->driver()->isRendering($request);
+    }
 
-        return $driver->isRendering($request);
+    public function driver($driver = null): DynamicRenderer
+    {
+        return parent::driver($driver);
     }
 }

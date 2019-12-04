@@ -1,8 +1,8 @@
 <?php
 
-namespace Coderello\DynamicRenderer\Tests;
+namespace Coderello\DynamicRendering\Tests;
 
-use Coderello\DynamicRenderer\Providers\DynamicRendererServiceProvider;
+use Coderello\DynamicRendering\Providers\DynamicRenderingServiceProvider;
 use Orchestra\Testbench\TestCase;
 use Symfony\Component\Process\Process;
 
@@ -32,7 +32,7 @@ abstract class AbstractTestCase extends TestCase
     protected function getPackageProviders($app)
     {
         return [
-            DynamicRendererServiceProvider::class,
+            DynamicRenderingServiceProvider::class,
         ];
     }
 

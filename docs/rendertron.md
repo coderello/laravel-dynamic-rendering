@@ -24,6 +24,6 @@ The default port is `3000`.
 All you have to do on the application side is to put these variables into the `.env` file.
 
 ```
-DYNAMIC_RENDERER_DRIVER=rendertron
+DYNAMIC_RENDERER=rendertron
 RENDERTRON_URL=http://localhost:3000
 ```

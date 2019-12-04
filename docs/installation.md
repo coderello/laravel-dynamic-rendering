@@ -10,13 +10,13 @@ featherIcon: download
 You can install this package via composer using this command:
 
 ```bash
-composer require coderello/laravel-dynamic-renderer
+composer require coderello/laravel-dynamic-rendering
 ```
 
-To publish the config file to `config/dynamic-renderer.php` run:
+To publish the config file to `config/dynamic-rendering.php` run:
 
 ```bash
-php artisan vendor:publish --tag="dynamic-renderer-config"
+php artisan vendor:publish --tag="dynamic-rendering-config"
 ```
 
 ## Choosing the renderer

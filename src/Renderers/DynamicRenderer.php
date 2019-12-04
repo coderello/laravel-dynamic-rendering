@@ -1,11 +1,11 @@
 <?php
 
-namespace Coderello\DynamicRenderer\Renderers;
+namespace Coderello\DynamicRendering\Renderers;
 
-use Coderello\DynamicRenderer\Support\RenderingResult;
+use Coderello\DynamicRendering\Support\RenderingResult;
 use Illuminate\Http\Request;
 
-interface Renderer
+interface DynamicRenderer
 {
     public function render(string $url): RenderingResult;
 

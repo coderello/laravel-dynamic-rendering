@@ -1,6 +1,6 @@
 <?php
 
-namespace Coderello\DynamicRenderer\RenderingCriteria;
+namespace Coderello\DynamicRendering\RenderingCriteria;
 
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Http\Request;

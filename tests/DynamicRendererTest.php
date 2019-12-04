@@ -1,13 +1,12 @@
 <?php
 
-namespace Coderello\DynamicRenderer\Tests;
+namespace Coderello\DynamicRendering\Tests;
 
-use Coderello\DynamicRenderer\Facades\DynamicRenderer;
-use Coderello\DynamicRenderer\Renderers\PrerenderRenderer;
-use Coderello\DynamicRenderer\Renderers\Renderer;
+use Coderello\DynamicRendering\Facades\DynamicRenderer;
+use Coderello\DynamicRendering\Renderers\PrerenderDynamicRenderer;
 use Symfony\Component\Process\Process;
 
-class DynamicRendererTest extends AbstractTestCase
+class DynamicRenderingTest extends AbstractTestCase
 {
     public function testTemporary()
     {

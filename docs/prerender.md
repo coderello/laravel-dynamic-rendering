@@ -24,6 +24,6 @@ The default port is `3000`. Change the server port with `export PORT=3005` if ne
 All you have to do on the application side is to put these variables into the `.env` file.
 
 ```
-DYNAMIC_RENDERER_DRIVER=prerender
+DYNAMIC_RENDERER=prerender
 PRERENDER_URL=http://localhost:3000
 ```

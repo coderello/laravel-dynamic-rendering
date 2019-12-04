@@ -1,9 +1,9 @@
 <?php
 
-namespace Coderello\DynamicRenderer\Facades;
+namespace Coderello\DynamicRendering\Facades;
 
-use Coderello\DynamicRenderer\Managers\DynamicRendererManager;
-use Coderello\DynamicRenderer\Support\RenderingResult;
+use Coderello\DynamicRendering\Managers\DynamicRenderingManager;
+use Coderello\DynamicRendering\Support\RenderingResult;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Facade;
 
@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static RenderingResult render(string $url)
  * @method static bool isRendering(Request $request)
  *
- * @see DynamicRendererManager
+ * @see DynamicRenderingManager
  */
 class DynamicRenderer extends Facade
 {

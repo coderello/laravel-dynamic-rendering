@@ -1,8 +1,8 @@
 <?php
 
-namespace Coderello\DynamicRenderer\RenderingCriteria;
+namespace Coderello\DynamicRendering\RenderingCriteria;
 
-use Coderello\DynamicRenderer\Facades\DynamicRenderer;
+use Coderello\DynamicRendering\Facades\DynamicRendering;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;

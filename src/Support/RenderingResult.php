@@ -1,6 +1,6 @@
 <?php
 
-namespace Coderello\DynamicRenderer\Support;
+namespace Coderello\DynamicRendering\Support;
 
 class RenderingResult
 {
