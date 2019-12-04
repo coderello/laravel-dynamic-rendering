@@ -10,19 +10,11 @@ featherIcon: activity
 ## Installing and configuring the renderer
 
 ```bash
-git clone https://github.com/prerender/prerender.git
+npm install prerender
 ```
 
 ```bash
-cd prerender
-```
-
-```bash
-npm install
-```
-
-```bash
-node server.js
+node node_modules/prerender/server.js
 ```
 
 The default port is `3000`. Change the server port with `export PORT=3005` if needed.
@@ -31,7 +23,7 @@ The default port is `3000`. Change the server port with `export PORT=3005` if ne
 
 All you have to do on the application side is to put these variables into the `.env` file.
 
-```dotenv
+```
 DYNAMIC_RENDERER_DRIVER=prerender_local
 PRERENDER_LOCAL_SERVICE_URL=http://localhost:3000
 ```
