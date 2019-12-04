@@ -2,8 +2,9 @@
 
 namespace Coderello\DynamicRenderer\Managers;
 
-use Coderello\DynamicRenderer\Renderers\PrerenderLocalRenderer;
+use Coderello\DynamicRenderer\Renderers\PrerenderRenderer;
 use Coderello\DynamicRenderer\Renderers\Renderer;
+use Coderello\DynamicRenderer\Renderers\RendertronRenderer;
 use Coderello\DynamicRenderer\Support\RenderingResult;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Manager;
@@ -15,9 +16,9 @@ class DynamicRendererManager extends Manager implements Renderer
      *
      * @return string
      */
-    public function getDefaultDriver()
+    public function getDefaultDriver(): string
     {
-        return $this->getConfigValue('dynamic-renderer.driver', 'prerender_local');
+        return $this->getConfigValue('dynamic-renderer.driver');
     }
 
     private function getConfigValue(string $key, $default = null)
@@ -26,10 +27,17 @@ class DynamicRendererManager extends Manager implements Renderer
         return Config::get($key, $default);
     }
 
-    public function createPrerenderLocalDriver()
+    public function createPrerenderDriver(): PrerenderRenderer
     {
-        return new PrerenderLocalRenderer(
-            $this->getConfigValue('dynamic-renderer.prerender_local', [])
+        return new PrerenderRenderer(
+            $this->getConfigValue('dynamic-renderer.prerender', [])
+        );
+    }
+
+    public function createRendertronDriver(): RendertronRenderer
+    {
+        return new RendertronRenderer(
+            $this->getConfigValue('dynamic-renderer.rendertron', [])
         );
     }
 
@@ -39,5 +47,13 @@ class DynamicRendererManager extends Manager implements Renderer
         $driver = $this->driver();
 
         return $driver->render($url);
+    }
+
+    public function getUserAgentPatterns(): array
+    {
+        /** @var Renderer $driver */
+        $driver = $this->driver();
+
+        return $driver->getUserAgentPatterns();
     }
 }

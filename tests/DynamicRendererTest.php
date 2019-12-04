@@ -3,7 +3,7 @@
 namespace Coderello\DynamicRenderer\Tests;
 
 use Coderello\DynamicRenderer\Facades\DynamicRenderer;
-use Coderello\DynamicRenderer\Renderers\PrerenderLocalRenderer;
+use Coderello\DynamicRenderer\Renderers\PrerenderRenderer;
 use Coderello\DynamicRenderer\Renderers\Renderer;
 use Symfony\Component\Process\Process;
 

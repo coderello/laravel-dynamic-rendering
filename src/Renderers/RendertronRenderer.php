@@ -7,23 +7,23 @@ use GuzzleHttp\Client;
 use GuzzleHttp\RequestOptions;
 use Illuminate\Support\Str;
 
-class PrerenderLocalRenderer implements Renderer
+class RendertronRenderer implements Renderer
 {
     /**
      * @var string|null
      */
-    protected $serviceUrl;
+    protected $rendertronUrl;
 
     public function __construct(array $options = [])
     {
-        $this->serviceUrl = $options['service_url'] ?? null;
+        $this->rendertronUrl = $options['url'] ?? null;
     }
 
     public function render(string $url): RenderingResult
     {
         $client = new Client;
 
-        $response = $client->get(Str::finish($this->serviceUrl, '/').$url, [
+        $response = $client->get(Str::finish($this->rendertronUrl, '/render/').$url, [
             RequestOptions::HTTP_ERRORS => false,
         ]);
 

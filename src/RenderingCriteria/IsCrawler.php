@@ -21,10 +21,36 @@ class IsCrawler implements RenderingCriterion
 
     public function matches(Request $request): bool
     {
-        $userAgent = $request->userAgent();
+        $userAgent = strtolower($request->userAgent());
 
-        return $this->crawlerDetect->isCrawler(
-            $userAgent
-        );
+        foreach ($this->botUserAgents() as $botUserAgent) {
+            if ($userAgent === strtolower($botUserAgent)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    protected function botUserAgents(): array
+    {
+        return [
+            'Baiduspider',
+            'bingbot',
+            'Embedly',
+            'facebookexternalhit',
+            'LinkedInBot',
+            'outbrain',
+            'pinterest',
+            'quora link preview',
+            'rogerbot',
+            'showyoubot',
+            'Slackbot',
+            'TelegramBot',
+            'Twitterbot',
+            'vkShare',
+            'W3C_Validator',
+            'WhatsApp',
+        ];
     }
 }
