@@ -11,4 +11,8 @@ Under the hood, if the request was made by the search bot, the requested page of
 
 The search engine is happy, you are happy, everyone is happy!
 
+## How dynamic rendering works
+
+![How dynamic rendering works]({{assets}}/how-dynamic-rendering-works.png)
+
 You can get more info on dynamic rendering in this guide by Google: [https://developers.google.com/search/docs/guides/dynamic-rendering](https://developers.google.com/search/docs/guides/dynamic-rendering)
