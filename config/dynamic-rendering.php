@@ -31,12 +31,12 @@ return [
      */
     'renderers' => [
 
-        'prerender' => [
-            'url' => env('PRERENDER_URL', 'http://localhost:3000'),
-        ],
-
         'rendertron' => [
             'url' => env('RENDERTRON_URL', 'http://localhost:3000'),
+        ],
+
+        'prerender' => [
+            'url' => env('PRERENDER_URL', 'http://localhost:3000'),
         ],
 
     ],
