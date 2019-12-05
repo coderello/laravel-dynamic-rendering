@@ -10,3 +10,5 @@ featherIcon: info
 Under the hood, if the request was made by the search bot, the requested page of your SPA is being converted into the plain HTML using the renderer and returned to the robot.
 
 The search engine is happy, you are happy, everyone is happy!
+
+You can get more info on dynamic rendering in this guide by Google: [https://developers.google.com/search/docs/guides/dynamic-rendering](https://developers.google.com/search/docs/guides/dynamic-rendering)
