@@ -10,11 +10,11 @@ The search engine is happy, you are happy, everyone is happy!
 
 ## Official Documentation
 
-Documentation for **Laravel Dynamic Rendering** can be found on the [Coderello website](https://coderello.com/docs/laravel-dynamic-rendering/next/introduction).
+Documentation for **Laravel Dynamic Rendering** can be found on the [Coderello website](https://coderello.com/docs/laravel-dynamic-rendering/1.0/introduction).
 
 ## Contributing
 
-Thank you for considering contributing to **Laravel Dynamic Rendering**! The contribution guide can be found in the [documentation](https://coderello.com/docs/laravel-dynamic-rendering/next/contributing).
+Thank you for considering contributing to **Laravel Dynamic Rendering**! The contribution guide can be found in the [documentation](https://coderello.com/docs/laravel-dynamic-rendering/1.0/contributing).
 
 ## License
 
