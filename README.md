@@ -1,4 +1,4 @@
-<p align="center"><img src="https://coderello.com/images/packages/laravel-dynamic-rendering.svg" width="450"></p>
+<p align="center"><img src="https://coderello.com/images/packages/laravel-dynamic-rendering.svg" width="500"></p>
 
 ## Introduction
 
