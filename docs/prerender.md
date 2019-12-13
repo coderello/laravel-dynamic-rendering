@@ -1,7 +1,7 @@
 ---
 title: Prerender
 section: Renderers
-weight: 200
+weight: 780
 featherIcon: activity
 ---
 
