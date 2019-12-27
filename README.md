@@ -1,21 +1,21 @@
-<p align="center"><img src="https://coderello.com/images/packages/laravel-dynamic-rendering.svg" width="500"></p>
+<p align="center">
+  <img src="https://coderello.com/images/packages/laravel-dynamic-rendering.svg" width="500" alt="Laravel Dynamic Rendering" />
+</p>
 
-## Introduction
+## ✨ Introduction
 
-**Laravel Dynamic Rendering** totally solves the SEO issue for SPA (single page applications).
+**Laravel Dynamic Rendering** totally solves the SEO issue for applications with the JS powered frontend (Vue.js, React, Inertia.js, etc.).
 
-Under the hood, if the request was made by the search bot, the requested page of your SPA is being converted into the plain HTML using the renderer and returned to the robot.
+Under the hood, it renders the page as a plain HTML if it was requested by the search bot.
 
-The search engine is happy, you are happy, everyone is happy!
+## 📖 Documentation
 
-## Official Documentation
+For installation instructions and usage details, please take a look at the **[official documentation](https://coderello.com/docs/laravel-dynamic-rendering)**.
 
-Documentation for **Laravel Dynamic Rendering** can be found on the [Coderello website](https://coderello.com/docs/laravel-dynamic-rendering).
+## 💖 Support the development
 
-## Contributing
+**Do you like this project? Support it by donating:**
 
-Thank you for considering contributing to **Laravel Dynamic Rendering**! The contribution guide can be found in the [documentation](https://coderello.com/docs/laravel-dynamic-rendering).
-
-## License
+- Patreon: [Donate](https://patreon.com/coderello)
 
 **Laravel Dynamic Rendering** is open-sourced software licensed under the [MIT license](LICENSE.md).
