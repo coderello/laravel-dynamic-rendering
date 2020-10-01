@@ -12,10 +12,6 @@ Under the hood, it renders the page as a plain HTML if it was requested by the s
 
 For installation instructions and usage details, please take a look at the **[official documentation](https://coderello.com/docs/laravel-dynamic-rendering)**.
 
-## 💖 Support the development
-
-**Do you like this project? Support it by donating:**
-
-- Patreon: [Donate](https://patreon.com/coderello)
+## 📖 License
 
 **Laravel Dynamic Rendering** is open-sourced software licensed under the [MIT license](LICENSE.md).
