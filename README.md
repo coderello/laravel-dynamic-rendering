@@ -14,7 +14,7 @@ For installation instructions and usage details, please take a look at the **[of
 
 ## 💖 Support the development
 
-**Do you like this project? Support it by donating:**
+**Do you like this project? Support it by donating love:**
 
 - Patreon: [Donate](https://patreon.com/coderello)
 
