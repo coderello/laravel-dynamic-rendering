@@ -10,7 +10,7 @@ Under the hood, it renders the page as a plain HTML if it was requested by the s
 
 ## 📖 Documentation
 
-For installation instructions and usage details, please take a look at the **[official documentation](https://coderello.com/docs/laravel-dynamic-rendering)**.
+For installation instructions and usage details, please take a look at the **[official documentation](./docs)**.
 
 ## 📖 License
 
